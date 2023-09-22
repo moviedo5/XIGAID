@@ -11,8 +11,8 @@ titlebox_borderwidth: "1cm"
 main_findings: Generación de materiales didácticos de Estadística multiformato
 logoleft_width: '35in'
 logoright_width: '10cm'
-logoright_name: logoudc.png
-logoleft_name: logoJornada2.png
+logoright_name: image/logoudc.png
+logoleft_name: image/logoJornada2.png
 font_size: 32
 main_bottomsize: 0.05
 bibliography: packages.bib
@@ -76,7 +76,7 @@ $~$
 
 # Creación de libros  con 
 
-### ![](image/bookdown.png){width=40%}
+### ![](image/bookdown.png){width=38%}
 
 Bookdown es un paquete de R que permite crear libros, artículos o apuntes de alta calidad mediante sintaxis Markdown. 
 
@@ -126,9 +126,14 @@ elementos de escritura técnica como citas, notas a pie de página, etc.
 * Alternativa gratuita a programas de pago.
 
 
-$~$
+## Crear tu  póster (como éste) con
 
-$~$
+<p align="center">
+![](image/betterhexlogo.png){width=20%}
+
+
+**Ciencia abierta**:, esta jornada permite el feedback de la comunidad científica. Toda la información de esté póster está disponible en Git ![Git](image/git.png){width=4%} [enlace documentación poster](https://github.com/moviedo5/XIGAID)
+
 
 # Crea tu aplicación web  con
 
@@ -142,7 +147,7 @@ No solo se pueden crear scripts de R para análisis estadístico, sino que tambi
 Aplicaciones web (dinámica e interactivas) encillas para ciencia de datos sin compromisos.  Ejemplos: [Radiant](https://shiny.posit.co/r/gallery/education/radiant/), paneles para difundir resultados como: [Predición cooperativa del COVID](https://covid19.citic.udc.es/). Además, no se requieren habilidades de desarrollo web, ver ejemplo:
 
 <p align="center">
-![](image/shiny2.png){width=70%}
+![](image/shiny2.png){width=80%}
 </p>
 
 
@@ -163,7 +168,7 @@ Aplicaciones web (dinámica e interactivas) encillas para ciencia de datos sin c
 
 
 <p align="center">
-![](image/elearning.title.png){width=60%}
+![](image/elearning.title.png){width=70%}
 </p>
 
 
@@ -181,18 +186,6 @@ Cuestionarios de aprendizaje para Moodle
 ![Uso de ChatGPT para crear preguntas de exámenes](chatgpt.title.png){width=40%}
 Falta logo jornadas
 -->
-
-## Crear tu  póster (como éste) con
-
-<p align="center">
-![](image/betterhexlogo.png){width=20%}
-</p>
-Disponible en el repositorio Git: 
-<!--
-**Ciencia abierta** en repositorios Git que permiten el feedback de la comunidad científica  ![Git](git.png){width=5%} 
--->
-<!--![feedback](mas.png){width=5%} ![feedback](feedback2.png){width=10%}-->
-
 
 
 ### Agradecimientos
