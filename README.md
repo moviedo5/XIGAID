@@ -5,8 +5,8 @@
 Poster creado con [posterdown](https://github.com/brentthorne/posterdown)
 
 ## Version reducida (en JPG)
-![](poster.jpg)
+![](image/poster.jpg)
 
 ## Versión original y reproducible
-![](poster4.jpg)
+![](image/poster4.jpg)
 
