@@ -1,0 +1,227 @@
+---
+title: ''
+author:
+main_topsize: 0.1
+output:
+  posterdown::posterdown_betterport:
+    self_contained: no
+    pandoc_args: "--mathjax"
+    number_sections: no
+titlebox_borderwidth: "1cm"
+main_findings: Generación de materiales didácticos de Estadística multiformato
+logoleft_width: '35in'
+logoright_width: '10cm'
+logoright_name: logoudc.png
+logoleft_name: logoJornada2.png
+font_size: 32
+main_bottomsize: 0.05
+bibliography: packages.bib
+link-citations: yes
+---
+
+<!--
+https://brentthorne.github.io/posterdown_html_showcase/
+![A nice image.](Banner_CEB_EIB_data.jpg){width=40%}
+-->
+
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      warning = FALSE,
+                      tidy = FALSE,
+                      message = FALSE,
+                      fig.align = 'center',
+                      out.width = "100%")
+options(knitr.table.format = "html") 
+```
+
+
+```{r, include=FALSE}
+#knitr::write_bib(c('posterdown', 'rmarkdown','pagedown'), 'packages.bib')
+knitr::write_bib(file = 'packages.bib')
+
+```
+
+
+# Objetivo ![](image/idea3.png){width=7%}
+
+###  Elaboración de materiales didácticos completos en diversos formatos ad-hoc para la asignatura de Estadística
+
+ La metodología propuesta se puede utilizar para cualquier tipo de asignatura, aunque en aquellas con un componente cuantitativo es donde se puede aprovechar al máximo. ![](alertaazul.jpg){width=5%}
+
+#  Un enfoque repoducible y automatizada  ![](image/repro2.png){width=7%} 
+
+Se propone la utilización del software estadístico [R](https://cran.r-project.org/) y la interfaz  [RStudio](http://www.rstudio.com) para la generación de materiales didácticos aplicando el enfoque de investigación reproducible a la docencia. 
+
+<p align="center">
+![](image/RPage.png){width=95%}
+</p>
+
+Todo el contenido del material se encuentra en ficheros de texto plano que incluye fragmentos de código con el que se leen datos, se realizan cálculos y se generan tablas y gráficos. 
+
+El fichero de texto se compila de la forma adecuada, y el resultado son los materiales listos para usar por los alumnos. Cada vez que se compila el documento, los fragmentos de código se ejecutan y su resultado se actualiza en el documento de salida. 
+
+Esto permite realizar fácilmente cambios y que se reflejen automáticamente en todas las versiones de la documentación.  
+
+
+## Bases para la creación de documentos multiformato ![](image/herramienta.jpg){width=7%} 
+
+Mediante **markdown** se puede generar documentación fácilmente reproducible y modificable con poca o nula experiencia en programación. La siguiente figura resume todo el proceso.
+
+![](image/estructura.png){width=105%} 
+$~$
+
+$~$
+
+
+# Creación de libros  con 
+
+### ![](image/bookdown.png){width=40%}
+
+Bookdown es un paquete de R que permite crear libros, artículos o apuntes de alta calidad mediante sintaxis Markdown. 
+
+Una vez creada la estructura del documento bookdown, este se puede compilar en varios formatos: HTML, EPUB (para lectores electrónicos) y PDF.
+
+Con estas bases, una colección de materiales didácticos a elaborar para una asignatura podría constar
+de:
+
+* Apuntes, presentaciones y problemas. Los apuntes con bookdown quedan en formato libro, pero
+también accesible para cualquier dispositivo (móvil, tablet). 
+
+* El paquete bookdown es un paquete R de código abierto que facilita la escritura de libros y artículos/informes extensos con R Markdown. Las características incluyen:
+
+*  Múltiples opciones de formatos de salida:
+
+![](image/word.png){width=25%}
+![](image/kindle.png){width=15%}
+![](image/latex.png){width=15%}
+![](image/epub.png){width=15%}
+![](image/pdf.png){width=15%}
+
+
+
+* Posibilidad de incluir gráficos dinámicos y aplicaciones interactivas (widgets HTML y apps Shiny).
+
+* Admite una amplia gama de lenguajes: R, C/C++, Python, Fortran, Julia, scripts de Shell y SQL, etc.
+
+<!--* Las ecuaciones, teoremas y demostraciones de LaTeX funcionan para todos los formatos de salida.
+-->
+
+*  Se puede publicar en GitHub, bookdown.org y cualquier servidor we, por ejemplo 
+Ejemplos: apuntes básicos (introdución a la estadística con R](https://rubenfcasal.github.io/intror/)  y avanzdos de estadística  [Aprendizaje Estadístico](https://rubenfcasal.github.io/aprendizaje_estadistico/)[Apuntes para el aprendizje estadístico].
+
+<!--
+![Bookdown](bookdown.png){width=40%}
+![Bookdown](bookdown.png){width=40%}
+-->
+
+
+## Crea tu sitio web o blog con ![ blogdown: Creating Websites with R Markdown](blogdown.png){width=40%}
+
+El objetivo de este paquete es proporcionar un **blog** (sitio web potente y personalizable) donce subir su  material docente. 
+
+* Permite mostrar salidas automáticas, como gráficos, tablas y resultados de análisis, y
+elementos de escritura técnica como citas, notas a pie de página, etc.
+
+* Alternativa gratuita a programas de pago.
+
+
+$~$
+
+$~$
+
+# Crea tu aplicación web  con
+
+<p align="center">
+![](image/shiny.jpg){width=35%}
+</p>
+
+<!--
+No solo se pueden crear scripts de R para análisis estadístico, sino que también permite la creación de documentación en formatos HTML, LaTeX y Markdown con  la ventaja de la calidad y versatilidad de los resultados de salida. -->
+
+Aplicaciones web (dinámica e interactivas) encillas para ciencia de datos sin compromisos.  Ejemplos: [Radiant](https://shiny.posit.co/r/gallery/education/radiant/), paneles para difundir resultados como: [Predición cooperativa del COVID](https://covid19.citic.udc.es/). Además, no se requieren habilidades de desarrollo web, ver ejemplo:
+
+<p align="center">
+![](image/shiny2.png){width=70%}
+</p>
+
+
+
+<!--
+* Alternativa gratuita a programas de  (Excel, SPSS, etc.pago). 
+
+[R Commander](https://estadistica-dma.ulpgc.es/cursoR4ULPGC/12-Rcommander.html)
+-->
+
+
+<!--
+![](covid.png){width=75%}
+-->
+
+
+## Creacion de cuestionarios Moodle
+
+
+<p align="center">
+![](image/elearning.title.png){width=60%}
+</p>
+
+
+El paquete de R de código abierto **Rexams** ofrece un enfoque único para la generación automática de exámenes. Basado en plantillas de ejercicios, es posible crear grandes cantidades de exámenes, cuestionarios y pruebas personalizadas para diversos sistema (con evaluación automática) e importaciones a sistemas de gestión del aprendizaje (como Moodle o Canvas).
+
+<!--
+<p align="center">
+![](elearning.title.png){width=50%}
+</p>
+-->
+
+
+<!--
+Cuestionarios de aprendizaje para Moodle
+![Uso de ChatGPT para crear preguntas de exámenes](chatgpt.title.png){width=40%}
+Falta logo jornadas
+-->
+
+## Crear tu  póster (como éste) con
+
+<p align="center">
+![](image/betterhexlogo.png){width=20%}
+</p>
+Disponible en el repositorio Git: 
+<!--
+**Ciencia abierta** en repositorios Git que permiten el feedback de la comunidad científica  ![Git](git.png){width=5%} 
+-->
+<!--![feedback](mas.png){width=5%} ![feedback](feedback2.png){width=10%}-->
+
+
+
+### Agradecimientos
+
+\footnotesize
+_Esta investigación/trabajo fue apoyado por las ayudas MINECO, PID2020-113578RB-I00 MTM2017-82724-R  y por la Xunta de Galicia (Grupos de Referencia Competitiva ED431C-2020-14 y Centro de Investigación del Sistema universitario de Galicia ED431G 2019/01), todos ellos a través del FEDER. CITIC, está financiado por la "Consellería de Cultura, Educación e Universidade de la Xunta de Galicia._
+
+### Referencias
+
+R Core Team. R: A language and environment for statistical computing. R Foundation for Statistical
+Computing (2017), Vienna, Austria. U
+
+Yihui Xie. bookdown: Authoring Books and Technical Documents with R Markdown. Chapman
+and Hall/CRC (2017). 
+
+<!--
+
+Introducción al Análisis de Datos con R
+
+Rubén Fernández Casal (ruben.fcasal@udc.es)
+
+Javier Roca-Pardiñas (roca@uvigo.es)
+
+Julián Costa Bouzas (julian.costa@udc.es)
+
+Manuel Oviedo de la Fuente (manuel.oviedo@udc.es)
+
+Edición: Junio de 2022. Impresión: 2023-02-13. ISBN: 978-84-09-41823-7
+
+ I Xornada Interuniversitaria Galega de Innovación Docente (XIGAID)
+-->
+

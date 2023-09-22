@@ -1,2 +1,4 @@
 # XIGAID
-I Xornada Interuniveritaria Galega de Innovación Docente
+ I Xornada Interuniversitaria Galega de Innovación Docente (XIGAID)
+
+## Poster creado con posterdown
