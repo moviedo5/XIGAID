@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="author" content="" />
+
+<title>XIGAID.knit</title>
+
+
+
+
+
+
+
+<!--
+Font-awesome icons ie github or twitter
+-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/brands.css" integrity="sha384-n9+6/aSqa9lBidZMRCQHTHKJscPq6NW4pCQBiMmHdUCvPN8ZOg2zJJTkC7WIezWv" crossorigin="anonymous">
+
+<!--
+Google fonts api stuff
+-->
+<link href='https://fonts.googleapis.com/css?family=Special Elite' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Rasa' rel='stylesheet'>
+
+<!--
+Here are the required style attributes for css to make this poster work :)
+-->
+<style>
+@page {
+size: 36in 48in;
+margin: 0;
+padding: 0;
+}
+body {
+margin: 0px;
+padding: 0px;
+width: 36in;
+height: 48in;
+text-align: justify;
+font-size: 45px;
+line-height: 1.05;
+}
+/* RMarkdown Class Styles */
+/* center align leaflet map,
+from https://stackoverflow.com/questions/52112119/center-leaflet-in-a-rmarkdown-document */
+.html-widget {
+margin: auto;
+position: sticky;
+margin-top: 2cm;
+margin-bottom: 2cm;
+}
+.leaflet.html-widget.html-widget-static-bound.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom {
+position: sticky;
+width: 100%;
+}
+pre.sourceCode.r {
+background-color: #dddddd40;
+border-radius: 4mm;
+padding: 4mm;
+width: 75%;
+margin: auto;
+margin-top: 1em;
+margin-bottom: 1em;
+/* align-items: center; */
+}
+code.sourceCode.r{
+background-color: transparent;
+font-size: 20pt;
+border-radius: 2mm;
+}
+code {
+font-size: 25pt;
+font-family: monospace;
+background-color: #00808024;
+color: #0b4545;
+padding: 1.2mm;
+line-height: 1;
+border-radius: 2mm;
+}
+caption {
+margin-bottom: 10px;
+font-size: 20pt;
+font-style: italic;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #00808020;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
+  border-spacing: 0;
+  font-size: 40%;
+  border-style: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 1em;
+  padding-left: 1em;
+  line-height: 1em;
+}
+table {
+  margin: auto;
+}
+th {
+  padding-left: 5mm;
+  padding-right: 5mm;
+}
+.caption {
+font-size: 20pt;
+font-style: italic;
+padding-top: 0;
+}
+.references {
+font-size: 20px;
+line-height: 90%;
+}
+/* Create three unequal columns that floats next to each other */
+.column {
+float: left;
+padding: 0px;
+}
+.outer {
+width: 36in;
+height: calc(48in *  (1 - 0.1 - 5.0e-2 - 0.01) );
+-webkit-column-count: 3; /* Chrome, Safari, Opera */
+-moz-column-count: 3; /* Firefox */
+column-count: 3;
+-webkit-column-fill: auto;
+-moz-column-fill: auto;
+column-fill: auto;
+column-gap: 0;
+padding-left: 0cm;
+padding-right: 0cm;
+/* -webkit-column-rule-width: 50%;
+-moz-column-rule-width: 50%;
+column-rule-width: 50%; */
+-webkit-column-rule-style: none;
+-moz-column-rule-style: none;
+column-rule-style: none;
+-webkit-column-rule-color: black;
+-moz-column-rule-color: black;
+column-rule-color: black;
+background-color: #ffffff;
+font-family: Rasa;
+margin-top: calc(48in *  0.1 );
+padding-top: 1em;
+padding-bottom: 1em;
+}
+span.citation {
+  color: #008080;
+  font-weight: bold;
+}
+a {
+text-decoration: none;
+color: #008080;
+}
+#title {
+font-size: 125pt;
+text-align: left;
+margin: 0;
+line-height: 98%;
+border-bottom: 0;
+font-weight: normal;
+background: 0;
+}
+#author {
+color: #0b4545;
+margin: 0;
+line-height: 85%;
+font-size: 1.17em;
+}
+#affiliation {
+padding-top: 0.1em;
+color: ;
+font-style: italic;
+font-size: 25px;
+margin: 0;
+}
+sup {
+color: #cc0000;
+}
+.affiliation sup {
+font-size: 20px;
+}
+.author {
+text-align: left;
+}
+.author sup {
+font-size: 30px;
+}
+.author_extra {
+color: #008080;
+margin: 0;
+line-height: 85%;
+font-size: 35px;
+text-align: left;
+}
+.outer h1, h2, h3, h4, h5, h6 {
+text-align: center;
+margin: 0;
+font-weight: bold;
+}
+.section h1 {
+  text-align:center;
+  padding-bottom:5px;
+  background:
+    linear-gradient(
+      to left,
+      #ffffff 1%,
+      #ffffff 20%,
+      #0b454575 33%,
+      #0b4545 50%,
+      #0b454575 66%,
+      #ffffff 80%,
+      #ffffff 99%
+    )
+    left
+    bottom
+    #ffffff
+    no-repeat;
+  background-size:100% 5px ;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.outer h2 {
+text-align: center;
+}
+.outer p, .level2 {
+color: #000000;
+}
+.outer ol {
+padding-left: 8%;
+padding-right: 8%;
+text-align: left;
+}
+.main {
+width: 36in;
+height: calc(48in * 0.1);
+position: absolute;
+background-color: #0b4545;
+color: #ffffff90;
+font-family: Special Elite;
+background-image: linear-gradient(#0b4545 50%,#008080);
+}
+.main strong {
+color: #ffffff;
+}
+.main strong > sup {
+color: #ffffff;
+}
+.main sup {
+color: #ffffff90;
+}
+#main-img-left {
+width: 10%;
+left: 0.5in;
+bottom: 0.2in;
+position: absolute;
+}
+#main-img-center {
+width: 10%;
+left: calc(36in * 0.45);
+bottom: 0.5in;
+position: absolute;
+}
+#main-img-right {
+width: 10%;
+right: 0.5in;
+bottom: 0.2in;
+position: absolute;
+}
+.main p {
+font-size: 150px;
+font-family: Special Elite;
+text-align: center;
+margin: 0;
+position: absolute;
+top: 50%;
+-ms-transform: translateY(-50%);
+transform: translateY(-50%);
+margin-left: 1em;
+}
+.fab {
+color: #00000030;
+font-size: 25px;
+}
+.twitter, i {
+color: #00000030;
+font-size: 35px;
+text-decoration: none;
+}
+a.email {
+text-decoration: none;
+color: #00000030;
+font-size: 35px;
+}
+.envelope {
+color: #00000030;
+font-size: 5px;
+text-decoration: none;
+}
+.poster_wrap {
+width: 36in;
+height: 48in;
+padding: 0cm;
+}
+.main_bottom {
+width: 36in;
+height: calc(48in * 5.0e-2);
+margin-top: calc(48in * (1 - 5.0e-2));
+position: absolute;
+background-color: #0b4545;
+background-image: linear-gradient(#008080 10%, #0b4545);
+}
+.section {
+  padding-left: 10mm;
+  padding-right: 10mm;
+}
+span > #tab:mytable {
+  font-weight: bold;
+}
+.orcid img {
+  width: 3%;
+}
+.emphasis {
+  background-color: #008080;
+  color: #ffffff;
+  border: solid #0b2045 3mm;
+  margin: 1em;
+  padding-left: 0;
+  padding-right: 0;
+}
+.emphasis h1 {
+  font-weight: bold;
+  background: none;
+  background-color: #0b2045;
+  padding-bottom: 5mm;
+  padding-top: 1mm;
+  margin-top: -1mm;
+  margin-right: -1mm;
+  margin-left: -1mm;
+}
+.emphasis blockquote {
+  border: 0;
+}
+.emphasis ol {
+  padding: 0;
+  padding-left: 8%;
+  font-size: 100%;
+  font-weight: bold;
+}
+.emphasis p {
+  color: #ffffff;
+}
+</style>
+</head>
+<body>
+
+
+<div class="poster_wrap">
+
+<div class="column outer">
+<div class="section">
+
+
+
+</div>
+
+<!--
+https://brentthorne.github.io/posterdown_html_showcase/
+![A nice image.](Banner_CEB_EIB_data.jpg){width=40%}
+-->
+<div id="objetivo" class="section level1">
+<h1>Objetivo <img src="image/idea3.png" style="width:7.0%" /></h1>
+<div id="elaboración-de-materiales-didácticos-completos-en-diversos-formatos-ad-hoc-para-la-asignatura-de-estadística" class="section level3">
+<h3>Elaboración de materiales didácticos completos en diversos formatos ad-hoc para la asignatura de Estadística</h3>
+<p>La metodología propuesta se puede utilizar para cualquier tipo de asignatura, aunque en aquellas con un componente cuantitativo es donde se puede aprovechar al máximo. <img src="alertaazul.jpg" style="width:5.0%" /></p>
+</div>
+</div>
+<div id="un-enfoque-repoducible-y-automatizada" class="section level1">
+<h1>Un enfoque repoducible y automatizada <img src="image/repro2.png" style="width:7.0%" /></h1>
+<p>Se propone la utilización del software estadístico <a href="https://cran.r-project.org/">R</a> y la interfaz <a href="http://www.rstudio.com">RStudio</a> para la generación de materiales didácticos aplicando el enfoque de investigación reproducible a la docencia.</p>
+<p align="center">
+<img src="image/RPage.png" style="width:95.0%" />
+</p>
+<p>Todo el contenido del material se encuentra en ficheros de texto plano que incluye fragmentos de código con el que se leen datos, se realizan cálculos y se generan tablas y gráficos.</p>
+<p>El fichero de texto se compila de la forma adecuada, y el resultado son los materiales listos para usar por los alumnos. Cada vez que se compila el documento, los fragmentos de código se ejecutan y su resultado se actualiza en el documento de salida.</p>
+<p>Esto permite realizar fácilmente cambios y que se reflejen automáticamente en todas las versiones de la documentación.</p>
+<div id="bases-para-la-creación-de-documentos-multiformato" class="section level2">
+<h2>Bases para la creación de documentos multiformato <img src="image/herramienta.jpg" style="width:7.0%" /></h2>
+<p>Mediante <strong>markdown</strong> se puede generar documentación fácilmente reproducible y modificable con poca o nula experiencia en programación. La siguiente figura resume todo el proceso.</p>
+<p><img src="image/estructura.png" style="width:105.0%" />
+<span class="math inline">\(~\)</span></p>
+<p><span class="math inline">\(~\)</span></p>
+</div>
+</div>
+<div id="creación-de-libros-con" class="section level1">
+<h1>Creación de libros con</h1>
+<div id="section" class="section level3">
+<h3><img src="image/bookdown.png" style="width:38.0%" /></h3>
+<p>Bookdown es un paquete de R que permite crear libros, artículos o apuntes de alta calidad mediante sintaxis Markdown.</p>
+<p>Una vez creada la estructura del documento bookdown, este se puede compilar en varios formatos: HTML, EPUB (para lectores electrónicos) y PDF.</p>
+<p>Con estas bases, una colección de materiales didácticos a elaborar para una asignatura podría constar
+de:</p>
+<ul>
+<li><p>Apuntes, presentaciones y problemas. Los apuntes con bookdown quedan en formato libro, pero
+también accesible para cualquier dispositivo (móvil, tablet).</p></li>
+<li><p>El paquete bookdown es un paquete R de código abierto que facilita la escritura de libros y artículos/informes extensos con R Markdown. Las características incluyen:</p></li>
+<li><p>Múltiples opciones de formatos de salida:</p></li>
+</ul>
+<p><img src="image/word.png" style="width:25.0%" />
+<img src="image/kindle.png" style="width:15.0%" />
+<img src="image/latex.png" style="width:15.0%" />
+<img src="image/epub.png" style="width:15.0%" />
+<img src="image/pdf.png" style="width:15.0%" /></p>
+<ul>
+<li><p>Posibilidad de incluir gráficos dinámicos y aplicaciones interactivas (widgets HTML y apps Shiny).</p></li>
+<li><p>Admite una amplia gama de lenguajes: R, C/C++, Python, Fortran, Julia, scripts de Shell y SQL, etc.</p></li>
+</ul>
+<!--* Las ecuaciones, teoremas y demostraciones de LaTeX funcionan para todos los formatos de salida.
+-->
+<ul>
+<li>Se puede publicar en GitHub, bookdown.org y cualquier servidor we, por ejemplo
+Ejemplos: apuntes básicos (introdución a la estadística con R](<a href="https://rubenfcasal.github.io/intror/" class="uri">https://rubenfcasal.github.io/intror/</a>) y avanzdos de estadística <a href="https://rubenfcasal.github.io/aprendizaje_estadistico/">Aprendizaje Estadístico</a>[Apuntes para el aprendizje estadístico].</li>
+</ul>
+<!--
+![Bookdown](bookdown.png){width=40%}
+![Bookdown](bookdown.png){width=40%}
+-->
+</div>
+<div id="crea-tu-sitio-web-o-blog-con-blogdown-creating-websites-with-r-markdown" class="section level2">
+<h2>Crea tu sitio web o blog con <img src="blogdown.png" style="width:40.0%" alt="blogdown: Creating Websites with R Markdown" /></h2>
+<p>El objetivo de este paquete es proporcionar un <strong>blog</strong> (sitio web potente y personalizable) donce subir su material docente.</p>
+<ul>
+<li><p>Permite mostrar salidas automáticas, como gráficos, tablas y resultados de análisis, y
+elementos de escritura técnica como citas, notas a pie de página, etc.</p></li>
+<li><p>Alternativa gratuita a programas de pago.</p></li>
+</ul>
+</div>
+<div id="crear-tu-póster-como-éste-con" class="section level2">
+<h2>Crear tu póster (como éste) con</h2>
+<p align="center">
+<p><img src="image/betterhexlogo.png" style="width:20.0%" /></p>
+<p><strong>Ciencia abierta</strong>:, esta jornada permite el feedback de la comunidad científica. Toda la información de esté póster está disponible en Git <img src="image/git.png" style="width:4.0%" alt="Git" /> <a href="https://github.com/moviedo5/XIGAID">enlace documentación poster</a></p>
+</div>
+</div>
+<div id="crea-tu-aplicación-web-con" class="section level1">
+<h1>Crea tu aplicación web con</h1>
+<p align="center">
+<img src="image/shiny.jpg" style="width:35.0%" />
+</p>
+<!--
+No solo se pueden crear scripts de R para análisis estadístico, sino que también permite la creación de documentación en formatos HTML, LaTeX y Markdown con  la ventaja de la calidad y versatilidad de los resultados de salida. -->
+<p>Aplicaciones web (dinámica e interactivas) encillas para ciencia de datos sin compromisos. Ejemplos: <a href="https://shiny.posit.co/r/gallery/education/radiant/">Radiant</a>, paneles para difundir resultados como: <a href="https://covid19.citic.udc.es/">Predición cooperativa del COVID</a>. Además, no se requieren habilidades de desarrollo web, ver ejemplo:</p>
+<p align="center">
+<img src="image/shiny2.png" style="width:80.0%" />
+</p>
+<!--
+* Alternativa gratuita a programas de  (Excel, SPSS, etc.pago). 
+
+[R Commander](https://estadistica-dma.ulpgc.es/cursoR4ULPGC/12-Rcommander.html)
+-->
+<!--
+![](covid.png){width=75%}
+-->
+<div id="creacion-de-cuestionarios-moodle" class="section level2">
+<h2>Creacion de cuestionarios Moodle</h2>
+<p align="center">
+<img src="image/elearning.title.png" style="width:70.0%" />
+</p>
+<p>El paquete de R de código abierto <strong>Rexams</strong> ofrece un enfoque único para la generación automática de exámenes. Basado en plantillas de ejercicios, es posible crear grandes cantidades de exámenes, cuestionarios y pruebas personalizadas para diversos sistema (con evaluación automática) e importaciones a sistemas de gestión del aprendizaje (como Moodle o Canvas).</p>
+<!--
+<p align="center">
+![](elearning.title.png){width=50%}
+</p>
+-->
+<!--
+Cuestionarios de aprendizaje para Moodle
+![Uso de ChatGPT para crear preguntas de exámenes](chatgpt.title.png){width=40%}
+Falta logo jornadas
+-->
+<div id="agradecimientos" class="section level3">
+<h3>Agradecimientos</h3>
+<p><em>Esta investigación/trabajo fue apoyado por las ayudas MINECO, PID2020-113578RB-I00 MTM2017-82724-R y por la Xunta de Galicia (Grupos de Referencia Competitiva ED431C-2020-14 y Centro de Investigación del Sistema universitario de Galicia ED431G 2019/01), todos ellos a través del FEDER. CITIC, está financiado por la “Consellería de Cultura, Educación e Universidade de la Xunta de Galicia.</em></p>
+</div>
+<div id="referencias" class="section level3">
+<h3>Referencias</h3>
+<p>R Core Team. R: A language and environment for statistical computing. R Foundation for Statistical
+Computing (2017), Vienna, Austria. U</p>
+<p>Yihui Xie. bookdown: Authoring Books and Technical Documents with R Markdown. Chapman
+and Hall/CRC (2017).</p>
+<!--
+
+Introducción al Análisis de Datos con R
+
+Rubén Fernández Casal (ruben.fcasal@udc.es)
+
+Javier Roca-Pardiñas (roca@uvigo.es)
+
+Julián Costa Bouzas (julian.costa@udc.es)
+
+Manuel Oviedo de la Fuente (manuel.oviedo@udc.es)
+
+Edición: Junio de 2022. Impresión: 2023-02-13. ISBN: 978-84-09-41823-7
+
+ I Xornada Interuniversitaria Galega de Innovación Docente (XIGAID)
+-->
+</div>
+</div>
+</div>
+
+</div>
+<div class="main">
+<p>Generación de materiales didácticos de Estadística multiformato</p>
+</div>
+<div class="main_bottom">
+<img id="main-img-left" src=image/logoJornada2.png>
+<img id="main-img-center" src=>
+<img id="main-img-right" src=image/logoudc.png>
+</div>
+</div>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+var script = document.createElement("script");
+script.type = "text/javascript";
+var src = "true";
+if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+if (location.protocol !== "file:" && /^https?:/.test(src))
+src = src.replace(/^https?:/, '');
+script.src = src;
+document.getElementsByTagName("head")[0].appendChild(script);
+})();
+</script>
+
+
+</body>
+</html>
